@@ -34,19 +34,19 @@ function verifFunc(tabResultats) {
         }
     }
     // console.log(verifTableau);
-    afficherResultats(verifTableau);
+    afficherResultats(verifTableau); //affichage du resultat 
     couleursFonction(verifTableau);
     verifTableau = []; //pour remettre à zéro quand on veux changer la réponse
 }
 
-function afficherResultats(tabCheck) {
+function afficherResultats(tabCheck) { //prends un tableau à vérifier
 
-    const nbDeFautes = tabCheck.filter(el => el !== true).length;
+    const nbDeFautes = tabCheck.filter(el => el !== true).length; //retourne un tableau vérifier, en filtrant les éléments strictement différents de true (tout les falses)
     // console.log(nbDeFautes);
 
-    switch(nbDeFautes) {
+    switch(nbDeFautes) { //pour remplacer les if
 
-        case 0:
+        case 0: //quand le nbr de fautes et égale à zéro
             titreResultat.innerText = `✔️ Bravo, c'est un sans faute ! ✔️`
             aideResultat.innerText = ''
             noteResultat.innerText = '5/5'
@@ -77,7 +77,7 @@ function afficherResultats(tabCheck) {
             noteResultat.innerText = '0/5'
         break;
 
-        default:
+        default: //message en cas d'erreur/bug
             'Wops, cas innatendu.';
     }
 }
