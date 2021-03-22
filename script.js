@@ -82,25 +82,25 @@ function afficherResultats(tabCheck) { //prends un tableau à vérifier
     }
 }
 
-function couleursFonction(tabValeurBooleen) {
+function couleursFonction(tabValeurBooleen) { //
 
-    for(let j = 0; j < tabValeurBooleen.length; j++){
+    for(let j = 0; j < tabValeurBooleen.length; j++){ //
 
-        if(tabValeurBooleen[j] === true){
-            toutesLesQuestions[j].style.background = 'green';
+        if(tabValeurBooleen[j] === true){ 
+            toutesLesQuestions[j].style.background = 'green'; //si la réponse est bonne le block devient vert
         } else {
-            toutesLesQuestions[j].style.background = 'red';
-            toutesLesQuestions[j].classList.add('echec');
+            toutesLesQuestions[j].style.background = 'red'; // sinon si la réponse est fausse le block devient rouge
+            toutesLesQuestions[j].classList.add('echec'); // cette animation vient si l'intégralités des réponses sont fausses
 
             setTimeout(() => {
-                toutesLesQuestions[j].classList.remove('echec');
+                toutesLesQuestions[j].classList.remove('echec'); // classList.add & .remove sont des Method qui fonctionnent avec l'API
             }, 500)
         }
     }
 }
 
-toutesLesQuestions.forEach(item => {
+toutesLesQuestions.forEach(item => { // toutes les questions (block) pour chaque item ou l'on click dessus il redevient blanc
     item.addEventListener('click', () => {
-        item.style.background = "white";
+        item.style.background = "white"; 
     })
 })
