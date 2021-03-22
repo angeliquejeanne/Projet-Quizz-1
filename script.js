@@ -101,6 +101,6 @@ function couleursFonction(tabValeurBooleen) { //
 
 toutesLesQuestions.forEach(item => { // toutes les questions (block) pour chaque item ou l'on click dessus il redevient blanc
     item.addEventListener('click', () => {
-        item.style.background = "white"; 
+        item.style.background = "black"; 
     })
 })
