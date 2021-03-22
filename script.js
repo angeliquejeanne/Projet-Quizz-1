@@ -1,11 +1,11 @@
 const form = document.querySelector('.form-quizz'); //Ici on selectionne le formulaire
 let tableauResultats = []; 
 const reponses = ['c','a','b','a','c'];
-const emojis = ['✔️','✨','👀','😭','👎'];
+const emojis = ['✔️','✨','👀','😭','👎'];// ajout du tableau des emojis elles sont compter comme chaine de caractères elles prennent moins de place du coup
 const titreResultat = document.querySelector('.resultats h2');
-const noteResultat = document.querySelector('.note');
-const aideResultat = document.querySelector('.aide');
-const toutesLesQuestions = document.querySelectorAll('.question-block');
+const noteResultat = document.querySelector('.note'); // ajout de la note de bonne réponse
+const aideResultat = document.querySelector('.aide'); // pour ajouter le message de resultat
+const toutesLesQuestions = document.querySelectorAll('.question-block'); //pour ajouter des couleurs et des animations
 let verifTableau = [];
 
 // on est à l'écoute d'un événement dans le formaulaire, ici
@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
 
 function verifFunc(tabResultats) {
 
-    for(let a = 0; a < 5; a++){
+    for(let a = 0; a < 5; a++){ //itération x5 la boucle tourne 5x car 5 questions
 
         if(tabResultats[a] === reponses[a]) {
             verifTableau.push(true);
@@ -36,7 +36,7 @@ function verifFunc(tabResultats) {
     // console.log(verifTableau);
     afficherResultats(verifTableau);
     couleursFonction(verifTableau);
-    verifTableau = [];
+    verifTableau = []; //pour remettre à zéro quand on veux changer la réponse
 }
 
 function afficherResultats(tabCheck) {
