@@ -1,5 +1,5 @@
-const form = document.querySelector('.form-quizz');
-let tableauResultats = [];
+const form = document.querySelector('.form-quizz'); //Ici on selectionne le formulaire
+let tableauResultats = []; 
 const reponses = ['c','a','b','a','c'];
 const emojis = ['✔️','✨','👀','😭','👎'];
 const titreResultat = document.querySelector('.resultats h2');
@@ -8,11 +8,14 @@ const aideResultat = document.querySelector('.aide');
 const toutesLesQuestions = document.querySelectorAll('.question-block');
 let verifTableau = [];
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+// on est à l'écoute d'un événement dans le formaulaire, ici
+// quand on soumet le formulaire avec submit "bouton valider"
+// on fait une fonction fléchée anonyme 
+form.addEventListener('submit', (e) => { 
+    e.preventDefault(); // on utilise la methode preventDefault qui ici va empecher l'actualisation de la page
     // console.log(document.querySelector('input[name="q1"]:checked').value);
 
-    for(i = 1; i < 6; i++) {
+    for(i = 1; i < 6; i++) { // ici on va itérer 5 fois, faire tournée 5 fois la boucle
         tableauResultats.push(document.querySelector(`input[name="q${i}"]:checked`).value)
     }
     // console.log(tableauResultats);
