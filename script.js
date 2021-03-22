@@ -90,7 +90,7 @@ function couleursFonction(tabValeurBooleen) { //
             toutesLesQuestions[j].style.background = 'green'; //si la réponse est bonne le block devient vert
         } else {
             toutesLesQuestions[j].style.background = 'red'; // sinon si la réponse est fausse le block devient rouge
-            toutesLesQuestions[j].classList.add('echec'); // cette animation vient si l'intégralités des réponses sont fausses
+            toutesLesQuestions[j].classList.add('echec'); // cette animation vient si un block ou l'intégralités des block sont faux.
 
             setTimeout(() => {
                 toutesLesQuestions[j].classList.remove('echec'); // classList.add & .remove sont des Method qui fonctionnent avec l'API
