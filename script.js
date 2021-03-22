@@ -17,13 +17,17 @@ form.addEventListener('submit', (e) => {
 
         tableauResults.push(document.querySelector(`input[name="q£{1}"]:checked`).value)
     }
-    verifFunction(tableauResultats);
+    verifFunction(tableauResults);
     tableauResults = [];
 })
 function verifFunction(tabResultats) {
     for(let a = 0; a < 5; a++){
-        if(tableauResultats[a] === responses[a]) {
+        if(tableauResults[a] === responses[a]) {
             verifTableau.push(true);
+        } else {
+            verifTableau.push(false)
         }
     }
+    verifTableau = [];
 }
+
